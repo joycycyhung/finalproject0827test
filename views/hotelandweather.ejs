@@ -1,0 +1,213 @@
+<html lang="en">
+  <head>
+    <link rel='stylesheet' href='style.css'/>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8" />
+    <title>Weather App - JavaScript</title>
+    <style>
+            .btn {
+              background-color: rgb(0, 131, 253);
+              border: none;
+              color: white;
+              padding: 2px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 10px 20px;
+              cursor: pointer;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .card-title {
+              background-color: rgb(57, 58, 59);
+              border: none;
+              color:white;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 20px;
+              margin: 10px 10px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            #search-weather {
+                padding: 20px 40px;
+                margin: 20px 20px;
+            }
+
+            .weather-info {
+              color:rgb(32, 32, 32);
+              text-align: left;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 20px;
+              margin: 10px 10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            h2 {
+              background-color: rgba(99, 150, 5, 0.8);
+              border: none;
+              color:white;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 20px;
+              margin: 10px 10px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            
+        h1 {
+          color: whitesmoke;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 50px;
+          margin: 10px 10px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'Abril Fatface', cursive;
+          background-color: rgba(0, 31, 116, 0.8);
+        }
+            body{
+              background-repeat: no-repeat;
+              background-size: cover;
+          }
+
+          .cards {
+            width: 20rem;
+            height: 22rem ;
+          }
+            
+    </style>
+            
+  </head>
+  <body background="/images/IMG_5999.jpg">
+
+        <nav class="navbar navbar-expand-lg navbar-light" Style="background-color: rgba(255, 255, 255, 0.5);">
+                <a class="navbar-brand" href="/">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                          <a class="nav-link" href="weatherandhotel">Weather First <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item active">
+                          <a class="nav-link" href="hotelandweather">Hotel First <span class="sr-only">(current)</span></a>
+                      </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="randompick">Talk To An Agent <span class="sr-only">(current)</span></a>
+                    </li>
+                  </ul>
+                  </form>
+                </div>
+              </nav>
+
+
+  <h1>Plan The Trip From Finding Your Ideal Hotel!</h1>
+  <br>
+  <div class="container">
+      <div class="row">
+        <div class="col-sm">
+            <div class="cards" Style="background-color: rgba(255, 255, 255, 0.6);">
+                <h2>Choose A Booking Website</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="http://www.booking.com">Booking.Com</a></li>
+                    <li class="list-group-item"><a href="http://www.expedia.co.uk/Hotels">Expedia</a></li>
+                    <li class="list-group-item"><a href="http://www.tripadvisor.co.uk/Hotels">Trip Advisor</a></li>
+                    <li class="list-group-item"><a href="https://www.trivago.co.uk">Trivago</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm">
+            <img src="/images/air.png" alt="" width="300" style="padding-top: 75">
+        </div>
+        <div class="col-sm">
+            <div class="cards center-align" style="background-color: rgba(255, 255, 255, 0.6);">
+                <div class="card-content">
+                <span class="card-title" Style="background-color: rgba(99, 150, 5, 0.8)">Local Weather App</span>
+                </div>
+                <div class="card-action">
+                <form id="search-weather">
+                <input
+                type="text"
+                name="location"
+                placeholder="Your location"
+                />
+                <button type="submit" class="btn">Find Weather</button>
+                </form>
+                <img id="weather-icon" src="" alt="Loading Icon" />
+                <br>
+                <div class="weather-info">
+                <ul><span id="location"></span> </ul>
+                <ul><span id="temperature"></span>ºC </ul>
+                <ul><span id="weather-text"></span></ul>
+                </div>
+                </div>
+                </div>
+        </div>
+      </div>
+    </div>
+    
+        ​
+  <script>
+    const iconImg = document.getElementById("weather-icon");
+    const locationField = document.getElementById("location");
+    const tempField = document.getElementById("temperature");
+    const weatherTextField = document.getElementById("weather-text");
+    const searchForm = document.getElementById("search-weather");
+
+    const API_URL = `http://api.openweathermap.org/data/2.5/weather?&units=metric&appid=291c1e84da89aabe63117725b48966eb`;
+
+    navigator.geolocation.getCurrentPosition(({ coords }) => {
+      getInitialWeather(coords);
+    });
+
+    function getInitialWeather({ latitude, longitude }) {
+      console.log(latitude, longitude);
+      fetch(`${API_URL}&lat=${latitude}&lon=${longitude}`)
+        .then(response => response.json())
+        .then(json => setWeatherInfo(json));
+    }
+
+    function setWeatherInfo({ name, main, weather }) {
+      const locationName = name;
+      const temperature = main.temp;
+      const { icon, description } = weather[0];
+      const iconUrl = `https://openweathermap.org/img/w/${icon}.png`;
+
+      iconImg.src = iconUrl;
+      locationField.textContent = locationName;
+      tempField.textContent = temperature;
+      weatherTextField.textContent = description;
+    }
+
+    function searchWeather(e) {
+      const location = document.querySelector("input").value;
+      e.preventDefault();
+
+      fetch(`${API_URL}&q=${location}`)
+        .then(response => response.json())
+        .then(json => setWeatherInfo(json));
+    }
+
+    searchForm.addEventListener("submit", searchWeather);
+  </script>
+</html>

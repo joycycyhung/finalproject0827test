@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='/style.css' />
+    <style>        
+        h1 {
+          color: whitesmoke;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 50px;
+          margin: 10px 10px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'Abril Fatface', cursive;
+          background-color: rgba(0, 31, 116, 0.8);
+        }
+      .card-header {
+              font-family: 'Patua One', cursive;
+              border: none;
+              color: white;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 20px;
+              font-weight:bold;
+          }
+          
+        body{
+              background-repeat: no-repeat;
+              background-size: cover;
+          }
+    
+</style>
+  </head>
+  <body background="/images/IMG_5999.jpg">
+      <nav class="navbar navbar-expand-lg navbar-light" Style="background-color: rgba(255, 255, 255, 0.5);">
+          <a class="navbar-brand" href="/">Home</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="weatherandhotel">Weather First <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="hotelandweather">Hotel First <span class="sr-only">(current)</span></a>
+                </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="randompick">Talk To An Agent <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+    <h1>Are You Ready For Another ADVENTURE?</h1>
+    <br>
+    <br>
+
+      <div class="container">
+          <div class="row">
+            <div class="col-sm">
+                <div class="colindex1">
+                    <div class="card">
+                        <div class="card-header" style="background-color: rgb(99, 150, 5, 0.8)">
+                          Travel Depends on Weather?
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Check Out Weather Before Making Trip Arrangement!</h5>
+                          <p class="card-text">Don't want to let weather ruin your ideal trip? Search weather and then hotel!</p>
+                          <a href="weatherandhotel" class="btn btn-primary" style="background-color: rgb(99, 150, 5, 0.8)">Click Me For Weather Search</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="colindex2">
+                    <div class="card">
+                        <div class="card-header" style="background-color: rgb(99, 150, 5, 0.8)">
+                          Nah, HOTELS is What I care.
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Choose Your Ideal Hotel and Scew The Weather.</h5>
+                          <p class="card-text">Sometimes, travel is all about staying in a relax hotel and just get comfy.</p>
+                          <a href="hotelandweather" class="btn btn-primary" style="background-color: rgb(99, 150, 5, 0.8)">Click Me For Hotel Searching</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="colindex3">
+                    <div class="card">
+                        <div class="card-header" style="background-color: rgb(99, 150, 5, 0.8)">
+                          I Have No Idea!
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Let Our Agent Help You Plan A Perfect Trip!</h5>
+                          <p class="card-text">Sometimes it's nice to just let others worries. So Talk To One Of Our Agents!</p>
+                          <a href="randompick" class="btn btn-primary" style="background-color: rgb(99, 150, 5, 0.8)">Talk To An Agent!</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+  </body>
+</html>

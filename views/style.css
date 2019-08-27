@@ -1,0 +1,10 @@
+.navbar navbar-expand-lg {
+    background-color: rgb(85, 85, 85);
+    border-color:  rgb(85, 85, 85);
+}
+
+.card-header {
+    background-color: rgb(85, 85, 85);
+    color: white;
+    font-family: 'Black Ops One', cursive;
+}

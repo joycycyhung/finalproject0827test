@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Our Progessional Agents!</title>
+   <link href="https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Anton&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+   .card-deck{
+       margin: 0 20px;
+   }
+
+   body{
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h2 {
+        color: whitesmoke;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 50px;
+        margin: 10px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Abril Fatface', cursive;
+        background-color: rgba(0, 31, 116, 0.8);
+    }
+
+    h3 {
+        color: rgb(39, 29, 29);
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 30px;
+        margin: 10px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Abril Fatface', cursive;
+        background-color: rgba(250, 250, 250, 0.932);
+    }
+
+
+    .email {
+        color: whitesmoke;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 10px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Abril Fatface', cursive;
+        background-color: rgba(0, 31, 116, 0.8);
+    }
+</style>
+</head>
+<body background="/images/IMG_5999.jpg">
+        <nav class="navbar navbar-expand-lg navbar-light" Style="background-color: rgba(255, 255, 255, 0.5);">
+                <a class="navbar-brand" href="/">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                          <a class="nav-link" href="weatherandhotel">Weather First <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item active">
+                          <a class="nav-link" href="hotelandweather">Hotel First <span class="sr-only">(current)</span></a>
+                      </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="randompick">Talk To An Agent <span class="sr-only">(current)</span></a>
+                    </li>
+                  </ul>
+                  </form>
+                </div>
+              </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Don't Worry If You Are Cluless.</h1s>
+            <p class="lead"> We have a professional team who knows a lot about traveling and fun, and they are ready to make the perfect plan for you.</p>
+        </div>
+    </div>
+
+<div class= "style">
+<h2>Talk To One of Our Agents!</h2>
+
+<br>
+<br>
+<div class="card-deck" id="container"></div>
+</div>
+<br>
+<br>
+
+<div class="d-flex justify-content-center align-items-center container">
+        <div class="row">
+          <div class="col email">
+                <form>
+                        <div class="form-group">
+                            <h3>Or Send Us An Email!
+                                <br>And We Would Get Back To You As Soon As Possible!</h3>
+                            <label for="exampleFormControlInput1">Your Name</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insert Your Name">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlInput1">Email address</label>
+                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1">How Many Are You?</label>
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4 or More</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect2">When Are You Going?</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Some Ideas In Mind?</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                      </form>
+          </div>
+        </div>
+      </div>
+
+
+<script>
+const container = document.getElementById("container")
+   //https://randomuser.me/api/?results=5
+// var searchStuff =  () => {
+   fetch(`https://randomuser.me/api/?results=5`)
+       .then(response => response.json())
+       .then(data => {
+           console.log(data)
+           data.results.forEach((person) => {
+               const Row = `
+                   <div class="card">
+                       <img src="${person.picture.medium}" class="card-img-top" alt="...">
+                       <div class="card-body">
+                           <h5 class="name">${person.name.first}</h5>
+                           <h4 class="surname">${person.name.last}</h4>
+                           <button class="contact">Contact Me</button>
+                       </div>
+                   </div>
+               `
+               console.log(Row)
+               container.insertAdjacentHTML("beforeend", Row);
+           });
+       })
+
+
+
+</script>
+</body>
+</html>
